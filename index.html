@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание тикетов</title>
+    <link rel="stylesheet" href="cyberpunk-css-main/cyberpunk.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Отправить ваше сообщение в техническую поддержку</h1>
+        <div class="form-group">
+            <label for="ticketTitle">Ваши контакты (Discord или Telegram):</label>
+            <input type="text" id="ticketTitle" class="cyber-input">
+        </div>
+        <div class="form-group">
+            <label for="ticketDescription">Суть вашей проблемы:</label>
+            <input type="text" id="ticketDescription" class="cyber-input">
+        </div>
+        <div style="text-align: center;">
+            <button onclick="createTicket()" class="cyber-button">
+                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="8" cy="8" r="7" fill="#fff" />
+                </svg>
+                Отправить тикет
+                <span class="glitchtext">Some edgy txt</span>
+                <span class="tag">R25</span>
+            </button>
+        </div>
+        <div id="detailsModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeDetailsModal()">&times;</span>
+
+                <h2>Дополнительная информация:</h2>
+                <p>Обращение в поддержку можно отправить 1 раз, в промежуток одного часа<br>Поддержка может не
+                    отвечать 50 часов<br>Поддежрка не гарантирует что решит вашу проблему<br>Тех поддержка видет
+                    ваш IP адрес</p>
+            </div>
+        </div>
+        <center>
+        <button onclick="openDetailsModal()" class="cyber-button-small">Подробнее</button>
+    </center>
+        <div id="status"></div>
+    </div>
+    <div class="cyber-timer" id="cooldownTimer">
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
